@@ -1,19 +1,23 @@
 package datamanagement;
 
-public class Unit implements IUnit {
-	private String uc;
-	private String UN;
-	private float co2;
-	private float co1;
-	private float co4;
-	private float co3;
-	private float co5;
-	private int a1, a2, ex;
-	
-	private StudentUnitRecordList rs;
+/**class Unit*/
 
+public class Unit implements IUnit {
+	
+	private String uc; // set the varaiable as private
+	private String UN;   // set the varaiable as private
+	private float co2;  // set the varaiable as private
+	private float co1;  // set the varaiable as private
+	private float co4;  // set the varaiable as private
+	private float co3;  // set the varaiable as private
+	private float co5;  // set the varaiable as private
+	private int a1, a2, ex;  // set the varaiable as private
+	
+	private StudentUnitRecordList rs;  // set the varaiable as private
+	/**Construct a Unit with specified values from the main method*/
 	public Unit(String UC, String un, float f1, float f2, float f3, float f4,
 			float f5, int i1, int i2, int i3, StudentUnitRecordList rl) {
+		
 
 		uc = UC;
 		UN = un;
@@ -25,48 +29,50 @@ public class Unit implements IUnit {
 		this.setAssessmentWeights(i1, i2, i3);
 		rs = rl == null ? new StudentUnitRecordList() : rl;
 	}
-
+	/** Returns Unit Code*/
 	public String getUnitCode() {
 		return this.uc;
 	}
-
+	/** Returns Unit Name*/
 	public String getUnitName() {
 
 		return this.UN;
 	}
-
+	/** Set Pass Cut off marks*/
 	public void setPsCutoff1(float cutoff) {
 		this.co2 = cutoff;
 	}
-
+	/** Returns Pass Cut off marks*/
 	public float getPsCutoff() {
 		return this.co2;
 	}
-
+	/** Set Credit Cut off Marks*/
 	public void setCrCutoff(float cutoff) {
 		this.co1 = cutoff;
 	}
-
+	/** Return Credit cutoff marks*/
 	public float getCrCutoff() {
 		return this.co1;
 	}
-
+	/** Set Distinction Cut off Marks*/
 	public void setDiCutoff(float cutoff) {
 		this.co4 = cutoff;
 	}
-
+	/** Return Distinctiont cutoff marks*/
 	public float getDiCuttoff() {
 		return this.co4;
 	}
-
+	
+	/**
 	public void HDCutoff(float cutoff) {
 		this.co3 = cutoff;
 	}
-
+	*/
+	/** Set High Distinction Cut off Marks*/
 	public void setHdCutoff(float cutoff) {
 		this.co3 = cutoff;
 	}
-
+	/** Return Distinctiont cutoff marks*/
 	public float getHdCutoff() {
 		return this.co3;
 
