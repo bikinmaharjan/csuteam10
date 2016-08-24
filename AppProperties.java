@@ -3,6 +3,7 @@ import java.util.*;
 import java.io.*;
 public class AppProperties {
     private static AppProperties self = null;
+    
     private Properties properties;
 
     public static AppProperties getInstance() {
@@ -25,5 +26,6 @@ public class AppProperties {
     }
     public Properties getProperties() {
         return properties;
+        
     }
 }
