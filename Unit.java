@@ -63,7 +63,7 @@ public class Unit implements IUnit {
 		return this.co4;
 	}
 	
-	/**
+	/** this class is not required
 	public void HDCutoff(float cutoff) {
 		this.co3 = cutoff;
 	}
@@ -72,7 +72,8 @@ public class Unit implements IUnit {
 	public void setHdCutoff(float cutoff) {
 		this.co3 = cutoff;
 	}
-	/** Return Distinctiont cutoff marks*/
+	
+	/** Return High Distinctiont cutoff marks*/
 	public float getHdCutoff() {
 		return this.co3;
 
@@ -176,7 +177,5 @@ public class Unit implements IUnit {
 			return "DI";
 		else
 			return "HD";
-	}
-
-	
+	}	
 }
