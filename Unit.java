@@ -1,3 +1,7 @@
+/**
+ * @author : Pujan Shrestha (Dreameeer)
+ */
+
 package datamanagement;
 
 /**class Unit*/
@@ -64,10 +68,12 @@ public class Unit implements IUnit {
 	}
 	
 	/** this class is not required
+	 * this  class also sets High Distinction Cut off marks
+	 * */
 	public void HDCutoff(float cutoff) {
 		this.co3 = cutoff;
 	}
-	*/
+	
 	/** Set High Distinction Cut off Marks*/
 	public void setHdCutoff(float cutoff) {
 		this.co3 = cutoff;
@@ -78,53 +84,67 @@ public class Unit implements IUnit {
 		return this.co3;
 
 	}
-
+	
+	//Set AeCutoff marks
 	public void setAeCutoff(float cutoff) {
 		this.co5 = cutoff;
 	}
-
+	/** Return Aecutoff marks*/
 	public float getAeCutoff() {
 		return this.co5;
 	}
-
+	
+	/**adds students record to rs*/
 	public void addStudentRecord(IStudentUnitRecord record) {
 		rs.add(record);
 	}
-
+	/** returns student records*/
 	public IStudentUnitRecord getStudentRecord(int studentID) {
+		// run loop to check the students in the list 
 		for (IStudentUnitRecord r : rs) {
+			// returnt the record of the student according ti the student ID search
 			if (r.getStudentID() == studentID)
 				return r;
 		}
 		return null;
 	}
-
+	
+	/**returns the student record*/
 	public StudentUnitRecordList listStudentRecords() {
 		return rs;
 	}
 
-	@Override
+	@Override // override the getAsg1Weight method in IUnit and return assignment 1 marks weight 
 	public int getAsg1Weight() {
 		return a1;
 	}
 
-	@Override
+	@Override // override the getAsg2Weight method in IUnit and return assignment 2 marks weight
 	public int getAsg2Weight() {
 		return a2;
 	}
 
-	@Override
+	@Override // override the getExamWeight method in IUnit and return exam marks weight 
 	public int getExamWeight() {
 		return ex;
 	}
 
-	@Override
+	@Override // override setAssessmentWeights method and set set Assessments weight
 	public void setAssessmentWeights(int a1, int a2, int ex) {
+		/* check if ht e assessment weight is realistic 
+		 * each assessment marks total weight cannot be more than 100 and less than 0
+		 * else throws exception
+		 * 
+		 */
 		if (a1 < 0 || a1 > 100 ||
 			a2 < 0 || a2 > 100 ||
 			ex < 0 || ex > 100 ) {
 			throw new RuntimeException("Assessment weights cant be less than zero or greater than 100");
-		}			
+		}	
+		/* 
+		 * final exam marks is always 100 so thte total weight of all the assessments 
+		 * must ne 100 else throws exception
+		 */
 		if (a1 + a2 + ex != 100) {
 			throw new RuntimeException("Assessment weights must add to 100");
 		}
@@ -133,6 +153,10 @@ public class Unit implements IUnit {
 		this.ex = ex;			
 	}
 	
+	/*
+	 * Set cutoffs .... checks if all the cutoff marks are correct 
+	 * else throws runtime error
+	 */
 	private void setCutoffs( float ps, float cr, float di, float hd, float ae) {
 		if (ps < 0 || ps > 100 ||
 			cr < 0 || cr > 100 ||
@@ -155,16 +179,22 @@ public class Unit implements IUnit {
 		}
 
 	}
-	
+	// returns the grade of the student
 	public String getGrade(float f1, float f2, float f3) {
-		float t = f1 + f2 + f3;
+		
+		float t = f1 + f2 + f3;  // sum up the total marks acquired by the student
+		
+		/* checking if there is any errors in entry of marks as
+		 * marks cannot be less than zero or greater than assessment weights
+		 * throws exception if any errors found 
+		 */
 		
 		if (f1 < 0 || f1 > a1 ||
 			f2 < 0 || f2 > a2 ||
 			f3 < 0 || f3 > ex ) {
 			throw new RuntimeException("marks cannot be less than zero or greater than assessment weights");
 		}
-
+		// initialize if contition to determine what grade is acquired by the student
 		if (t < co5) {
 			return "FL";
 		} else if (t < co2)
