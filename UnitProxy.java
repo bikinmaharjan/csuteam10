@@ -113,12 +113,12 @@ public class UnitProxy implements IUnit {
 		return um.getUnit(UC).getAsg2Weight();
 	}
 	
-	returns the total weight for the exam
+	//returns the total weight for the exam
 	public int getExamWeight() {
 		return um.getUnit(UC).getExamWeight();
 	}
 	
-	set the assessment weight for assignement 1, assignment 2 and exam
+	//set the assessment weight for assignement 1, assignment 2 and exam
 	public void setAssessmentWeights(int asg1Wgt, int asg2Wgt, int examWgt) {
 		um.getUnit(UC).setAssessmentWeights(asg1Wgt, asg2Wgt, examWgt);
 		
