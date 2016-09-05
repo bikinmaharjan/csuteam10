@@ -1,7 +1,15 @@
+/**
+ * @author Bishal Sapkota (sapkotabishal10)
+ * IUnit
+ * Edits: All the required comments are added and made the code presentable
+ */
+
 package datamanagement;
 
+//contains public signatures and fields for polymorphism
 public interface IUnit {
-
+//getters and setters for all the parameters
+	
     public String getUnitCode();
     public String getUnitName();
 

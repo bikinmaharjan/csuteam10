@@ -1,4 +1,5 @@
 package datamanagement;
+//Importing for creating JLabel instance with no image and with an empty string for the title
 import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
