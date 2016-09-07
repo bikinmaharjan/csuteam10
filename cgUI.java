@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+//interface for GUI
 public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		IStudentLister {
 	private cgCTL ctl;

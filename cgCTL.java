@@ -3,13 +3,14 @@ package datamanagement;
 public class cgCTL {
 
 	cgUI CGUI;
-	String cuc = null;
-	Integer currentStudentID = null;
-	boolean changed = false;
+	String cuc = null; //initialising the value
+	Integer currentStudentID = null; //initialising the value
+	boolean changed = false; //initialising the boolean value
 
 	public cgCTL() {
 	}
-
+	
+	//Interface for GUI
 	public void execute() {
 		CGUI = new cgUI(this);
 		CGUI.setState1(false);

@@ -6,10 +6,10 @@
 
 package datamanagement;
 
-//contains public signatures and fields for polymorphism
+//contains public signatures and fields for polymorphism used in UnitList
 public interface IUnitLister {
 
-    public void clearUnits();
-    public void addUnit(IUnit unit);
+    public void clearUnits(); //clears unit
+    public void addUnit(IUnit unit); //adds new unit
 
 }

@@ -7,7 +7,7 @@
 package datamanagement;
         
 public class ListStudentsCTL {
-	private StudentManager sm;
+	private StudentManager sm;//private object
 	
 	public ListStudentsCTL() {sm = StudentManager.get();}
     
