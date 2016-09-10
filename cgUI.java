@@ -1,5 +1,6 @@
 package datamanagement;
 
+//Importing for creating JLabel instance with no image and with an empty string for the title
 import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
@@ -9,6 +10,7 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+//interface for GUI
 public class cgUI extends javax.swing.JFrame implements IUnitLister, IStudentLister {
 	private cgCTL ctl;
 	private javax.swing.DefaultComboBoxModel uM;
