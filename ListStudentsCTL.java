@@ -1,3 +1,9 @@
+/**
+ * @author Bishal Sapkota (sapkotabishal10)
+ * ListStudentsCTL
+ * Edits: All the required comments are added and made the code presentable
+ */
+
 package datamanagement;
 
 public class ListStudentsCTL {
@@ -13,4 +19,5 @@ public class ListStudentsCTL {
 		for (Integer id : students.keySet())
 			lister.addStudent(students.get(id));
 	}
+
 }
